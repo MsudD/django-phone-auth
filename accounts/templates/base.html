@@ -1,0 +1,25 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <main>
+    {% block messages %}
+      {% if messages %}
+          {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+                  {{ message }}
+              </div>
+          {% endfor %}
+        {% endif %}
+    {% endblock messages %}
+
+    {% block content %}
+    {% endblock content %}
+  </main>
+</body>
+</html>

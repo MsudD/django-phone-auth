@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Verify Page</h2>
+<form method="post" novalidate>
+  {% csrf_token %}
+  <h3>phone : {{phone}}</h3>
+  {{ form.as_p }}
+  <button type="submit">Verify</button>
+  <a href="{% url 'resend' %}">resend</a>
+</form>
+
+{% endblock content %}
